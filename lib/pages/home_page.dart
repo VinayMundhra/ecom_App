@@ -8,10 +8,8 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Catelog App', 
-        style: TextStyle(
-          color: Colors.white,
-        ),
+        title: const Text(
+          'Catelog App'
         ),
       ),
       body: Center(
