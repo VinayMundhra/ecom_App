@@ -1,4 +1,3 @@
-import 'package:catelog/widgets/themes.dart';
 import 'package:flutter/Material.dart';
 import 'package:velocity_x/velocity_x.dart';
 

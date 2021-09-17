@@ -2,6 +2,12 @@ import 'dart:convert';
 
 // ignore: avoid_classes_with_only_static_members
 class CatalogModel {
+  // This is singleton
+  // static final catModel = CatalogModel._internal();
+  // CatalogModel._internal();
+
+  // factory CatalogModel()=> catModel;
+
   static List<Item> items=[];
 
   //Get Item by Id

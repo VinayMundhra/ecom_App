@@ -2,7 +2,6 @@ import 'package:catelog/models/catalog.dart';
 import 'package:catelog/utils/routes.dart';
 import 'package:catelog/widgets/home_widgets/catalog_header.dart';
 import 'package:catelog/widgets/home_widgets/catelog_list.dart';
-import 'package:catelog/widgets/themes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
