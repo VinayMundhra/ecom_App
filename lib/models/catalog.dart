@@ -3,7 +3,13 @@ import 'dart:convert';
 // ignore: avoid_classes_with_only_static_members
 class CatalogModel {
   static List<Item> items=[];
-}
+
+  //Get Item by Id
+Item getById(int id) => items.firstWhere((element) => element.id==id , orElse: null);
+
+  //Get Item by position
+Item getByPosition(int pos) => items[pos];
+  }
 
 class Item {
   final int id;

@@ -47,13 +47,16 @@ class CatelogItem extends StatelessWidget {
       children: [
         Hero(
           tag: Key(catalog.id.toString()),
-          child: CatalogImage(image: catalog.image)),
+          child: CatalogImage(
+            image: catalog.image
+            )
+            ),
         Expanded(
             child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            catalog.name.text.lg.color(MyTheme.darkBluishColor).bold.make(),
+            catalog.name.text.lg.color(context.accentColor).bold.make(),
             catalog.desc.text.hairLine.sm.make(),
             10.heightBox,
             ButtonBar(
@@ -67,7 +70,7 @@ class CatelogItem extends StatelessWidget {
                   }, 
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(
-                      MyTheme.darkBluishColor,
+                      context.theme.buttonColor,
                       ),
                       shape: MaterialStateProperty.all(StadiumBorder())
                   ),
@@ -77,6 +80,6 @@ class CatelogItem extends StatelessWidget {
           ],
         ))
       ],
-    )).white.roundedLg.square(150).make().py16();
+    )).color(context.cardColor).roundedLg.square(150).make().py16();
   }
 }
