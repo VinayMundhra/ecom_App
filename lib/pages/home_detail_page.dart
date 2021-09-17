@@ -17,7 +17,8 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent),
       backgroundColor: MyTheme.creamColor,
       bottomNavigationBar: Container(
         color: Colors.white38,
@@ -33,8 +34,8 @@ class HomeDetailPage extends StatelessWidget {
                           MyTheme.darkBluishColor,
                         ),
                         shape: MaterialStateProperty.all(StadiumBorder())),
-                    child: "Buy".text.make())
-                .wh(100, 50)
+                    child: "Add to cart".text.make())
+               // .wh(120, 50)
           ],
         ).p32(),
       ).p12(),
@@ -61,7 +62,10 @@ class HomeDetailPage extends StatelessWidget {
                         .bold
                         .make(),
                     catalog.desc.text.hairLine.xl.make(),
-                    10.heightBox,
+                    //10.heightBox,
+                    'A super-powerful chip. An advanced dual-camera system. A Ceramic Shield front that’s tougher than any smartphone glass. And a bright, beautiful OLED display.'
+                    .text.hairLine.sm
+                    .make().p20()
                   ],
                 ).py64(),
               ),
