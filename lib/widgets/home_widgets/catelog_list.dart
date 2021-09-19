@@ -10,7 +10,32 @@ class CatelogList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return !context.isMobile
+    ? GridView.builder(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2, 
+        crossAxisSpacing: 20.0),
+        shrinkWrap: true,
+        itemCount: CatalogModel.items.length,
+        itemBuilder: (BuildContext context, int index) {
+          final Item catalog = CatalogModel.items[index];
+          return InkWell(
+            onTap: ()=> Navigator.push<void>(
+              context, 
+              // ignore: always_specify_types
+              MaterialPageRoute(
+                builder: (BuildContext context)=>HomeDetailPage(
+                  catalog: catalog,
+                  
+                  )
+                  )
+                  ),
+            child: CatelogItem(
+              catalog: catalog
+              )
+            );
+        })
+        :ListView.builder(
         shrinkWrap: true,
         itemCount: CatalogModel.items.length,
         itemBuilder: (BuildContext context, int index) {
@@ -42,11 +67,7 @@ class CatelogItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return VxBox(
-      
-        child: Row(
-          
-      children: [
+    final children2 = [
         Hero(
           tag: Key(catalog.id.toString()),
           child: CatalogImage(
@@ -70,9 +91,16 @@ class CatelogItem extends StatelessWidget {
                 ],
               ).pOnly(right: 8.0)
             ],
-          ))
-        ],
-      ),
+          ).p(context.isMobile? 0: 16),
+          )
+        ];
+    return VxBox(
+      
+        child: context.isMobile? 
+        Row(
+           children: children2,
+      )
+      :Column(children: children2,),
     ).color(context.cardColor).rounded.square(150).make().py16();
   }
 }
